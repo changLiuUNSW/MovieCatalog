@@ -1,0 +1,92 @@
+.m-b-xs {
+    margin-bottom: 5px;
+}
+
+.m-b-none {
+    margin-bottom: 0;
+}
+
+.m-t-none {
+    margin-top: 0;
+}
+
+.wrapper {
+    padding: 15px;
+}
+
+.b-light {
+    border-color: #edf1f2;
+}
+
+.b-t {
+    border-top: 1px solid #dee5e7;
+}
+
+img {
+  &.row-image {
+    height: auto;
+    width: 120px;
+  }
+
+  &.poster {
+    max-width:100%;
+    max-height: 300px;
+  }
+}
+
+.form-validation {
+  .form-control.ng-dirty.ng-invalid {
+     border-color: #f05050;
+  }
+  .form-control.ng-dirty.ng-valid,
+  .form-control.ng-dirty.ng-valid:focus{
+    border-color: #27c24c;
+  }
+  
+  .error{
+    color: #f05050;
+    position: absolute;
+    font-size:12px;
+  }
+}
+
+.loading {
+  width: 40px;
+  height: 40px;
+  position: relative;
+  margin: 100px auto;
+}
+
+.double-bounce1, 
+.double-bounce2 {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: #333;
+  opacity: 0.6;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-animation: bounce 2.0s infinite ease-in-out;
+  animation: bounce 2.0s infinite ease-in-out;
+}
+
+.double-bounce2 {
+  -webkit-animation-delay: -1.0s;
+  animation-delay: -1.0s;
+}
+
+@-webkit-keyframes bounce {
+  0%, 100% { -webkit-transform: scale(0.0) }
+  50% { -webkit-transform: scale(1.0) }
+}
+
+@keyframes bounce {
+  0%, 100% { 
+    transform: scale(0.0);
+    -webkit-transform: scale(0.0);
+  } 50% { 
+    transform: scale(1.0);
+    -webkit-transform: scale(1.0);
+  }
+}

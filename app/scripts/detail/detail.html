@@ -1,0 +1,41 @@
+<div class="page-header">
+    <h1>{{::vm.movie.Title}}</h1>
+</div>
+<div class="row">
+    <div class="col-md-4">
+        <img data-ng-if="vm.movie.Poster!==vm.constant.noValue" class="poster" data-ng-src="{{::vm.movie.Poster}}" alt="{{::vm.movie.Title}}"
+            title="{{::vm.movie.Title}}">
+        <h4>Year</h4>
+        <p>{{::vm.movie.Year}}</p>
+        <h4>Rated</h4>
+        <p>{{::vm.movie.Rated}}</p>
+        <h4>Released</h4>
+        <p>{{::vm.movie.Released}}</p>
+        <h4>Runtime</h4>
+        <p>{{::vm.movie.Runtime}}</p>
+    </div>
+    <div class="col-md-8">
+        <h4>Genre</h4>
+        <p>{{vm.movie.Genre}}</p>
+        <h4>IMDB Rating</h4>
+        <uib-rating data-ng-if="vm.movie.imdbRating!==vm.constant.noValue" data-ng-model="vm.star.model" max="vm.star.maxRate" read-only="true"></uib-rating>
+        <span data-ng-if="vm.movie.imdbRating!==vm.constant.noValue">{{::vm.movie.imdbRating+'/'+ vm.constant.IMDBMaxRate}}</span>
+        <span data-ng-if="vm.movie.imdbRating===vm.constant.noValue">{{::vm.constant.noValue}}</span>
+        <h4>Director</h4>
+        <p>{{::vm.movie.Director}}</p>
+        <h4>Writer</h4>
+        <p>{{::vm.movie.Writer}}</p>
+        <h4>Actors</h4>
+        <p>{{::vm.movie.Actors}}</p>
+        <h4>Language</h4>
+        <p>{{::vm.movie.Language}}</p>
+        <h4>Country</h4>
+        <p>{{::vm.movie.Country}}</p>
+        <h4>Awards</h4>
+        <p>{{::vm.movie.Awards}}</p>
+        <h4>Plot</h4>
+        <p>{{vm.showFullPlot? vm.movie.Plot : (vm.movie.Plot| wordsLimit : 10)}}
+            <a href data-ng-if="!vm.showFullPlot" data-ng-click="vm.showMore()">more</a>
+        </p>
+    </div>
+</div>
